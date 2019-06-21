@@ -1,0 +1,6 @@
+name: phosphorenamer
+owner: oscar_b
+categories: 
+ - Computational chemistry
+description: Renames phosphate residues and atoms
+long_description: Renames phosphate-associated residues and atoms so Open-Contact can map them

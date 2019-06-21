@@ -1,0 +1,6 @@
+name: pdb_butcher
+owner: oscar_b
+categories: 
+ - Computational chemistry
+description: Splits a PDB ensemble into its constituent snapshots/models
+long_description: Splits a PDB ensemble into its constituent snapshots/models

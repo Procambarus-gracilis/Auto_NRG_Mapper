@@ -1,0 +1,6 @@
+name: rmsdcalca
+owner: oscar_b
+categories: 
+ - Computational chemistry
+description: Calculates the RMSD of the first chain of that which is mapped
+long_description: Calculates the RMSD of the first chain of that which is mapped

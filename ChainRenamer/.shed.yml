@@ -1,0 +1,6 @@
+name: chainrenamer
+owner: oscar_b
+categories: 
+ - Computational chemistry
+description: Renames chain IDs for MD ensembles
+long_description: Renames chain IDs for MD ensembles

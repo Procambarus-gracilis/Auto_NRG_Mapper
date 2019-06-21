@@ -1,0 +1,6 @@
+name: complexsplitter
+owner: oscar_b
+categories: 
+ - Computational chemistry
+description: Creates separate, dedicated pdb ensembles of the input ensembles' chains individually
+long_description: Creates separate, dedicated pdb ensembles of each individual chain from the input ensemble in order to be analyzed downstream for alpha-carbon RMSD profile
