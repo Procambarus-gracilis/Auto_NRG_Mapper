@@ -1,0 +1,34 @@
+<tool id="complex_splitter" name="Complex_Splitter" version="0.5.0">
+    <description>Creates ensembles of individual chains for downstream RMSF processing</description>
+    <requirements>
+       <requirement type="package" version="8">openjdk</requirement>
+    </requirements>
+    <command detect_errors="aggressive"><![CDATA[        
+        java -Djava.awt.headless=true -jar '$__tool_directory__/ComplexSplitter.jar' '$input1' '$input2' '$input3'
+	&& cp ChainA.pdb '$output1'
+	&& cp ChainB.pdb '$output2'
+    ]]></command>
+    <inputs>
+        <param name="input1" type="data" format="pdb" label="input1"/>
+	<param name="input2" size="2" type="text" label="First chain:"/>
+	<param name="input3" size="2" type="text" label="Second chain:"/>
+    </inputs>      
+    <outputs>
+        <data name="output1" format="pdb" label="First chain ensemble from ${on_string}"/>
+	<data name="output2" format="pdb" label="Second chain ensemble from ${on_string}"/>
+    </outputs>
+    <tests>
+        <test>
+            <param name="input" ftype="pdb" value="2hdx-READY-ALIGNED.pdb"/>
+            <output name="output1">
+                <assert_contents>
+                    <has_text text="813"/>
+		</assert_contents>
+            </output>
+        </test>
+    </tests>
+    <help><![CDATA[
+This program creates separate, individual ensembles of the two chains to be analyzed
+    ]]></help>
+</tool>
+
