@@ -1,0 +1,29 @@
+<tool id="chain_renamer" name="Chain_Renamer" version="0.5.0">
+    <description>Renames protein chains in MD ensemble to their original chain IDs</description>
+    <requirements>
+       <requirement type="package" version="8">openjdk</requirement>
+    </requirements>
+    <command detect_errors="aggressive"><![CDATA[        
+        java -Djava.awt.headless=true -jar '$__tool_directory__/ChainRenamer.jar' '$input'
+    ]]></command>
+    <inputs>
+        <param name="input" type="data" format="pdb" label="MD Ensemble chains to be renamed"/>
+    </inputs>      
+    <outputs>
+        <data name="output" format="pdb" label="Correct chain IDs from ${on_string}"/>
+    </outputs>
+    <tests>
+        <test>
+            <param name="input" ftype="pdb" value="2hdx-READY-ALIGNED.pdb"/>
+            <output name="output">
+                <assert_contents>
+                    <has_text text="813"/>
+		</assert_contents>
+            </output>
+        </test>
+    </tests>
+    <help><![CDATA[
+This program renames the chain IDs of an ensemble proceeding from MD so that the original and correct chain IDs are in their correct location
+    ]]></help>
+</tool>
+
