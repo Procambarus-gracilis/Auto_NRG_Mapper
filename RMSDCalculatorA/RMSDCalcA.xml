@@ -1,0 +1,29 @@
+<tool id="rmsd_calc" name="RMSD-One_Chain" version="0.5.0">
+    <description>Calculates alpha-carbon RMSD for a protein chain</description>
+    <requirements>
+       <requirement type="package" version="8">openjdk</requirement>
+    </requirements>
+    <command detect_errors="aggressive"><![CDATA[        
+        java -Djava.awt.headless=true -jar '$__tool_directory__/RMSDCalcA.jar' '$input'
+    ]]></command>
+    <inputs>
+        <param name="input" type="data" format="pdb" label="One chain alpha-carbon RMSD"/>
+    </inputs>      
+    <outputs>
+        <data name="output" format="txt" label="alpha carbon RMSD values from ${on_string}"/>
+    </outputs>
+    <tests>
+        <test>
+            <param name="input" ftype="pdb" value="2hdx-READY.pdb"/>
+            <output name="output">
+                <assert_contents>
+                    <has_text text="17.411968098121477"/>
+		</assert_contents>
+            </output>
+        </test>
+    </tests>
+    <help><![CDATA[
+This program calculates alpha-carbon RMSD values for one of the mapped protein chains
+    ]]></help>
+</tool>
+
