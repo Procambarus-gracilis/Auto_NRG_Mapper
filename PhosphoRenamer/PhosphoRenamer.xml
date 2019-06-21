@@ -1,0 +1,28 @@
+<tool id="phosphorenamer" name="Phosphate_atom_renamer" version="0.5.0">
+    <description>Renames atoms so Open-Contact can map them</description>
+    <requirements>
+       <requirement type="package" version="8">openjdk</requirement>
+    </requirements>
+    <command detect_errors="aggressive"><![CDATA[        
+        java -Djava.awt.headless=true -jar '$__tool_directory__/RMSDCalcA.jar' '$input'
+    ]]></command>
+    <inputs>
+        <param name="input" type="data" format="pdb" label="Renames residues and atoms for mapping"/>
+    </inputs>      
+    <outputs>
+        <data name="output" format="pdb" label="renamed atoms from ${on_string}"/>
+    </outputs>
+    <tests>
+        <test>
+            <param name="input" ftype="pdb" value="5TQ1-PO3_pending.pdb"/>
+            <output name="output">
+                <assert_contents>
+                    <has_text text="O1P"/>
+		</assert_contents>
+            </output>
+        </test>
+    </tests>
+    <help><![CDATA[
+This program renames potential improperly named phospho residues and atoms so that Open-Contact can map them
+    ]]></help>
+</tool>
