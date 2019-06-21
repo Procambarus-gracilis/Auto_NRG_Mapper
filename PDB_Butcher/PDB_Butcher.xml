@@ -1,0 +1,32 @@
+<tool id="PDB_Butcher" name="PDB Butcher" version="0.5.0">
+    <description>Cuts an ensemble PDB file into PDB files each containing the a constituent snapshot/model</description>
+    <requirements>
+       <requirement type="package" version="8">openjdk</requirement>
+    </requirements>
+    <command detect_errors="aggressive"><![CDATA[        
+        java -Djava.awt.headless=true -jar '$__tool_directory__/PDB_Butcher.jar' '$input'
+    ]]></command>
+    <inputs>
+        <param name="input" type="data" format="pdb" label="Protein PDB Ensemble"/>
+    </inputs>
+    <outputs>
+	<collection name="snapshots" type="list" label="Individual Ensemble Snapshots">
+        	<discover_datasets pattern="__name_and_ext__" format="pdb"/>
+	</collection>
+    </outputs>
+    <tests>
+        <test>
+            <param name="input" ftype="pdb" value="input.pdb"/>
+            <output_collection name="snapshots">
+		<element name="SS1">
+                	<assert_contents>
+                    		<has_text text="ATOM"/>
+                	</assert_contents>
+		</element>
+            </output_collection>
+        </test>
+    </tests>
+    <help><![CDATA[
+This program cuts up an ensemble PDB file into multiple PDB file where each PDB file contains a snapshot/model of the protein. 
+    ]]></help>
+</tool>
