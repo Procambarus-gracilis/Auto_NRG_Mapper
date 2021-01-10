@@ -1,5 +1,4 @@
-/* Author: Oscar Bastidas
-Last edited: May. 30, 2018
+/* Last edited: May. 30, 2018
 ANDROID EDITION */
 
 /* This program re-names the 2 chains in ensembles resulting from MD simulations */
