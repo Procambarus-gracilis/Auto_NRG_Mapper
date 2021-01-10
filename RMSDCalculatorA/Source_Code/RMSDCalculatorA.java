@@ -1,5 +1,4 @@
-/* Author: Oscar Bastidas
-Last edited: Mar. 14, 2018
+/* Last edited: Mar. 14, 2018
 ANDROID EDITION */
 
 /* This program calculates RMSDs for SINGLE CHAIN SYSTEM CAs per-residue basis ONLY */
