@@ -1,5 +1,4 @@
-/* Author: Oscar Bastidas
-Last edited: June. 14, 2018
+/* Last edited: June. 14, 2018
 ANDROID EDITION */
 
 /* This program re-names phosphate moiety atoms from MD simulations so Open-Contact can map them */
