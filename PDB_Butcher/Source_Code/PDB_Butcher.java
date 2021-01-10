@@ -1,5 +1,4 @@
-/* Authors: Oscar Bastidas and John Blankenhorn
-Last edited: Feb. 8, 2018
+/* Last edited: Feb. 8, 2018
 ANDROID EDITION*/
 
 //package edu.umn.EnsembleNRGMapper.llparker;
