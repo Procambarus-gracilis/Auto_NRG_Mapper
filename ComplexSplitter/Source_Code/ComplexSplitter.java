@@ -1,5 +1,4 @@
-/* Author: Oscar Bastidas
-Last edited: Mar. 25, 2018
+/* Last edited: Mar. 25, 2018
 ANDROID EDITION */
 
 /* This program splits two chains of a multi-chain ensemble system apart and writes each chain to its own *.pdb file for further RMSD analysis */
